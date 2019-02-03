@@ -11,3 +11,7 @@ export function getFlightByDate(flights, date) {
         if(flights[i]['date'] == date)
         return flights[i]
     }}
+
+export function formatDate(date) {
+  
+}

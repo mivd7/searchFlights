@@ -1,7 +1,8 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {findFlightByNum} from '../actions/search';
+import {findFlightByNum, findFlightByDate} from '../actions/search';
 import SearchResults from './SearchResults';
+import DateMenu from './DateMenu'
 
 class SearchBar extends Component {
   render() {
@@ -11,13 +12,15 @@ class SearchBar extends Component {
     console.log(search)
     return (
       <div>
-        <input
-          className="form-control"
-          placeholder = "Flight No."
-          onChange={(e) => findFlightByNum(e.target.value)}
+        <input type="text"
+               name="flightnum"
+               className="form-control"
+               placeholder = "Flight No."
+               onChange={(e) => findFlightByNum(e.target.value)}
          /><button onSubmit="submit">Search</button>
          <br/>
-        <SearchResults results={search.results} />
+          <DateMenu />
+          <SearchResults value={search.value} results={search.results} />
       </div>
     );
   }

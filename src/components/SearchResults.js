@@ -7,7 +7,7 @@ class SearchResults extends Component {
     const result = this.props.search.results
     const matches = this.props.search.match
     if (!matches) return (<div></div>)
-    if (matches.length === 0) return (<div>Flight number not found!</div>)
+    if (matches.length === 0) return (<div>Flight not found!</div>)
     return (
       <div>
         {result && <div>

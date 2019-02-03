@@ -1,20 +1,22 @@
-import {SEARCH_QUERY} from '../actions/search';
+import {NUM_QUERY, DATE_QUERY} from '../actions/search';
+import {getFlightByNum, getFlightByDate} from '../lib/finders'
 
 export default (state = [], action = {}) => {
   switch(action.type) {
-    case SEARCH_QUERY: {
-      
-      const value = action.payload.value;
+    case NUM_QUERY: {
+      const value = action.payload.value
       const flights = action.payload.flights
-      const flightNums = flights.map(flights => flights.flight)
-      const match = flightNums.filter((val) => val.includes(value))
-      function getFlightByNum(num) {
-        var i;
-        for (i = 0; i < flights.length; i++) {
-            if(flights[i]['flight'] == num)
-            return flights[i]
-        }}
-      const results = getFlightByNum(match)
+      const match = flights.map(flights => flights.flight)
+                          .filter((val) => val.includes(value))
+      const results = getFlightByNum(flights, match)
+      return {...state, value, match, results};
+    }
+    case DATE_QUERY: {
+      const value = action.payload.value
+      const flights = action.payload.flights
+      const match = flights.map(flights => flights.flight)
+                          .filter((val) => val.includes(value))
+      const results = getFlightByDate(flights, match)
       return {...state, value, match, results};
     }
     default:

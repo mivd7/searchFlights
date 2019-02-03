@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
 import {findFlightByNum} from '../actions/search';
-import {Link} from 'react-router-dom'
 import SearchResults from './SearchResults';
 
 class SearchBar extends Component {
@@ -17,6 +16,7 @@ class SearchBar extends Component {
           placeholder = "Flight No."
           onChange={(e) => findFlightByNum(e.target.value)}
          /><button onSubmit="submit">Search</button>
+         <br/>
         <SearchResults results={search.results} />
       </div>
     );

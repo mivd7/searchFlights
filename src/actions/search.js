@@ -1,13 +1,20 @@
 import request from 'superagent'
 
-export const SEARCH_QUERY = 'SEARCH_QUERY';
-export const SEARCH_SUCCEESS = 'SEARCH_SUCCEESS'
+export const NUM_QUERY = 'NUM_QUERY';
+export const DATE_QUERY = 'DATE_QUERY';
 
 const baseUrl = 'http://localhost:4000'
 
-const searchQuery = (value, flights) => {
+const numQuery = (value, flights) => {
   return {
-    type: SEARCH_QUERY, 
+    type: NUM_QUERY, 
+    payload: {value, flights}
+  };
+}
+
+const dateQuery = (value, flights) => {
+  return {
+    type: DATE_QUERY, 
     payload: {value, flights}
   };
 }
@@ -15,7 +22,15 @@ const searchQuery = (value, flights) => {
 export const findFlightByNum = (num) => (dispatch) => {
   request(`${baseUrl}/flights`)
     .then(response => {
-      dispatch(searchQuery(num, response.body))
+      dispatch(numQuery(num, response.body))
+    })
+    .catch(console.error)
+}
+
+export const findFlightByDate = (date) => (dispatch) => {
+  request(`${baseUrl}/flights`)
+    .then(response => {
+      dispatch(dateQuery(date, response.body))
     })
     .catch(console.error)
 }

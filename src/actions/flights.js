@@ -6,7 +6,7 @@ export const SEARCH_QUERY = 'SEARCH_QUERY'
 
 const baseUrl = 'http://localhost:4000'
 
-const flightsFetched = flights => ({
+export const flightsFetched = flights => ({
   type: FLIGHTS_FETCHED,
   flights
 })
@@ -14,11 +14,6 @@ const flightsFetched = flights => ({
 const flightFetched = flight => ({
   type: FLIGHT_FETCHED,
   flight
-})
-
-export const searchQuery = query => ({
-  type: SEARCH_QUERY,
-  query
 })
 
 export const loadFlights = () => (dispatch, getState) => {

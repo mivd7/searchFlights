@@ -1,18 +1,27 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
+import {loadFlights} from '../actions/flights'
 import { connect } from 'react-redux';
-import {findFlight} from '../lib/find'
 
 class SearchResults extends React.Component {
 
   render() {
+    const result = this.props.search.results
+    console.log(result)
+    if (!this.props) return (<div>searching</div>)
     return (
-      <div>{this.props.match.length === 0 && <div>Here be search results</div>}
-      {this.props.match.length > 0 && this.props.match.map(
-        match => <ul><li><Link to={`/flights/${match}`}>{match}</Link></li></ul>)}
+      <div>
+        {result && <div>
+        <Link to={`/flights/${result.id}`}>{result.destination}</Link></div>}
+        {!result && <div>searching</div>}
       </div>
     );
   }
 }
 
-export default connect(null)(SearchResults);
+const mapStateToProps = (state) => ({
+  search: state.search,
+  flights: state.flights
+})
+
+export default connect(mapStateToProps, {loadFlights})(SearchResults);

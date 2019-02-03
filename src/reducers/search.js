@@ -1,16 +1,21 @@
 import {SEARCH_QUERY} from '../actions/search';
-import data from '../data.json'
 
-const flightNums = data.flights.map(flight => flight.flight)
-console.log(flightNums)
-const initialState = {flightNums: flightNums, value: '', match: []};
-
-export default function reducer(state = initialState, action) {
+export default (state = [], action = {}) => {
   switch(action.type) {
     case SEARCH_QUERY: {
-      const {value} = action;
-      const match = state.flightNums.filter((val) => val.includes(value));
-      return {...state, value, match};
+      
+      const value = action.payload.value;
+      const flights = action.payload.flights
+      const flightNums = flights.map(flights => flights.flight)
+      const match = flightNums.filter((val) => val.includes(value))
+      function getFlightByNum(num) {
+        var i;
+        for (i = 0; i < flights.length; i++) {
+            if(flights[i]['flight'] == num)
+            return flights[i]
+        }}
+      const results = getFlightByNum(match)
+      return {...state, value, match, results};
     }
     default:
       return state;

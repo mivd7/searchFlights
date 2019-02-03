@@ -12,7 +12,7 @@ class StartScreen extends Component {
     console.log(this.props)
     return (
       <div>
-        Welcome! Search for you flight
+        Welcome! Search for your flight
         <br/>
         <SearchBar flights={this.props.flights}/>
       </div>

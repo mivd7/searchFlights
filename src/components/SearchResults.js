@@ -10,7 +10,8 @@ class SearchResults extends React.Component {
     const matches = this.props.search.match
     console.log(result)
     console.log(this.props)
-    if (!this.props) return (<div>searching</div>)
+    if (!matches) return (<div></div>)
+    if (matches.length === 0) return (<div>Flight number not found!</div>)
     return (
       <div>
         {result && <div>
@@ -19,8 +20,7 @@ class SearchResults extends React.Component {
                                           <br/>
                                           Departure time: {result.departure} on {result.date} from gate G20
                                           <h3>Airline: {result.airline}</h3></div>}
-        {!result && matches && matches.map(match => <ul><li>{match}</li></ul>)}
-        {!result && !matches && <div></div>}
+        {!result && matches && <div><h2>Did you mean:</h2>{matches.map(match => <ul><li>{match}</li></ul>)}</div>}
       </div>
     );
   }

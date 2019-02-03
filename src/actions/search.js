@@ -28,9 +28,6 @@ export const findFlightByNum = (num) => (dispatch) => {
 }
 
 export const findFlightByDate = (date) => (dispatch) => {
-  const dateString = date.toString()
-  console.log(dateString)
-  console.log(date)
   request(`${baseUrl}/flights`)
     .then(response => {
       dispatch(dateQuery(date, response.body))

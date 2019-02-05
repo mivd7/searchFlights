@@ -28,11 +28,12 @@ class App extends Component {
           </div>
           <div className="header__text-box">
             <Route path="/" exact component={StartScreen}/>
+            <Route path="/flights" exact component={MatchList} />
             <Route path="/flights/:id" exact component={FlightInfo} />
           </div>
         </header>
-        <main className="main">
-          <Route path="/flights" exact component={MatchList} />
+        <main className="main main--right">
+        nice background
         </main>
       </div>
       </body>

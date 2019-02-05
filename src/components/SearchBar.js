@@ -21,7 +21,7 @@ class SearchBar extends Component {
          <br/>
           <DateMenu />
           </form>
-          <div className="main">
+          <div className="main main--right">
           <br/>
           <SearchResults search={search} flights={flights}/>
           </div>

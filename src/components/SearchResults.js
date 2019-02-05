@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
 import MatchList from './MatchList';
-import {getFlightID} from '../lib/finders'
-import {loadFlight} from '../actions/flights'
 
 class SearchResults extends Component {
   render() {
@@ -17,12 +15,13 @@ class SearchResults extends Component {
     return (
       <div>
         {result && 
-        <div><Link to={`/flights/${result.id}`}><h2>Flight number: {result.flight}</h2></Link>
+        <div className="search search--result"><Link to={`/flights/${result.id}`}><h2>Flight number: {result.flight}</h2></Link>
                                           From {result.start} to {result.destination}
                                           <br/>
-                                          Departure time: {result.departure} on {result.date} from gate G20
+                                          Departure time: {result.departure} on {result.date.split('-').reverse().join('-')}
                                           <h3>Airline: {result.airline}</h3></div>}              
-        {!result && matches && matches.length < flights.length && <MatchList matches={matches}/>}
+        {!result && matches && matches.length < flights.length && 
+                                          <div className="search search--matches search--matches__list"><MatchList matches={matches}/></div>}
       </div>
     );
   }

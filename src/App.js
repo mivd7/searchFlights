@@ -18,7 +18,7 @@ class App extends Component {
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>      
+        {/* <link href="https://fonts.googleapis.com/css?family=Roboto+Mono" rel="stylesheet"/>       */}
       </head>
 
       <body>
@@ -34,6 +34,11 @@ class App extends Component {
           </div>
       </header>
       </div>
+      <footer className="footer">
+
+        <iframe className="the beatles" width="500" height="300" src="https://www.youtube.com/embed/nS5_EQgbuLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <br/> © MIVD Web Development, 2019
+      </footer>
       </body>
       </html>
       </Provider>

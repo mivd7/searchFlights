@@ -20,13 +20,9 @@ class SearchBar extends Component {
                 className="input input--num"
                 placeholder = "Flight No."
                 onChange={(e) => findFlightByNum(e.target.value)}
-          />
-          <br/>
-          <div className="input">
-            <DateMenu/>
-          </div>
+          /><DateMenu/>
         </div>
-        <div>
+        <div className="search">
           <br/>
           <SearchResults search={search} flights={flights}/>
           </div>

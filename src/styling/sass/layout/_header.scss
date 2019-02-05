@@ -3,12 +3,12 @@
   min-height: 100vh;
   width: 100vw;
   height: 50vh;
-  padding: 25rem;
+  padding: 30rem;
   background-color: $color-grey-light;
   background-image: linear-gradient(
       to right bottom,
-      rgba($color-primary-light, 0.8),
-      rgba($color-primary-dark, 0.8)), url(../img/suitcases.jpg);
+      rgba($color-primary-light, 0.7),
+      rgba($color-primary-dark, 0.7)), url(../img/suitcases.jpg);
   background-size: 100%;
   background-position: 0px 50%;
   background-repeat: no-repeat;
@@ -16,7 +16,8 @@
   border-bottom-left-radius: 15%;
   border-bottom-right-radius: 15%;
   position: relative;
-  font-size: 1.5rem;
+  font-size: 1.7rem;
+  font-stretch: expanded;
 
   &__logo-box {
     position: absolute;
@@ -25,13 +26,14 @@
   }
 
   &__logo {
-    height: 7rem;
+    height: 5rem;
   }
   /* determine size of image */
   &__text-box {
     position: absolute;
     color: $color-white;
-    top: 50%;
+    font-size: 16px;
+    top: 35%;
     left: 50%;
     transform: translate(-50%, -50%);
     /* transform property 50% of element's own top (not parent) */

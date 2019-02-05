@@ -3,20 +3,16 @@
 @import "abstracts/variables";
 
 @import "base/base";
-// @import "base/animations";
-// @import "base/typography";
+@import "base/typography";
 @import "base/utilities";
 
 @import "components/btn";
-// @import "components/results";
 @import "components/input";
-@import "components/datepicker";
-// @import "components/feature-box";
-// @import "components/card";
+@import "components/search";
 
 @import "layout/header";
 @import "layout/grid";
 @import "layout/main";
-// @import "layout/footer";
+@import "layout/footer";
 
 @import "pages/home";

@@ -4,8 +4,9 @@ export default class MatchList extends Component {
   render() {
     return (
       <div>
-        <h2>Did you mean </h2>{this.props.matches.map(match => 
-        <ul><li>{match}</li></ul>)}
+        <div className="search--matches__heading">
+        <h2>Did you mean </h2></div>{this.props.matches.map(match => 
+        <div className="search--matches__list"><ul><li>{match}</li></ul></div>)}
       </div>
     )
   }

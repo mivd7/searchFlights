@@ -19,15 +19,25 @@ class DateMenu extends Component {
 
   render() {
     const {findFlightByDate} = this.props
+    const search = this.props.search
+    console.log(this.props.search)
     return (
-      <div>
-      <button >
+      <div>{!search.formatted && <div> <button>
         <DatePicker className="input input--date" 
-                    value="Select date" 
                     selected={this.props.input} 
                     onChange={(e) => findFlightByDate(e)} 
-                    onClick={this.handleClick} />
-      </button>
+                    onClick={this.handleClick} 
+                    value={`select date`}/>
+      </button></div>}
+
+      {search.formatted && <div><button >
+        <DatePicker className="input input--date" 
+                    selected={this.props.input} 
+                    onChange={(e) => findFlightByDate(e)} 
+                    onClick={this.handleClick} 
+                    value={search.formatted.split('-').reverse().join('-')}/>
+      </button></div>}
+
       </div>
     )
   }

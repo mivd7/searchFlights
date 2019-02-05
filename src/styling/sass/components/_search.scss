@@ -1,0 +1,47 @@
+.search {
+  opacity: .9;
+  border-radius: 30%;
+  color: $color-secondary-light;
+  width: 50rem;
+  position: relative;
+
+  a {
+    text-decoration: none;
+  }
+
+  &--result {
+    position: relative;
+    top: 50%;
+    color: $color-secondary-dark;
+    background-image: linear-gradient(to top, rgba($color-grey-light, 0.75),rgba($color-white, 0.75)), 
+                                      url(../img/withlove.jpg);
+    padding: 2rem;
+    
+    h1 {
+      border-bottom: 1rem;
+    }
+  }
+
+  &--matches {
+    max-height: 25rem;
+    padding: 1rem;
+    text-align: justify;
+    column-span: all;
+    position: relative;
+    left: -25%;
+    margin-left: 25%;
+    text-align: left;
+    background-color: rgba($color-grey-dark, 0.75);
+    border-radius: 0;
+    padding: 2rem;
+    
+    ul {
+      list-style-type: none;
+    }
+    
+    &__heading {
+      border-bottom: 1rem;
+      font-weight: 1rem;
+    }
+  }
+}

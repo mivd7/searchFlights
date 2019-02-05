@@ -1,0 +1,9 @@
+.search-results {
+  position: relative;
+  height: 5rem;
+  width: 50rem;
+
+  &__image {
+    background-image: url(../img/airplane-landing.png)
+  }
+}

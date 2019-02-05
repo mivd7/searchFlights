@@ -11,7 +11,7 @@ class StartScreen extends Component {
   render() {
     return (
       <div>
-        Welcome! Search for your flight
+        <h1>Welcome! Search for your flight</h1>
         <br/>
         <SearchBar flights={this.props.flights}/>
       </div>

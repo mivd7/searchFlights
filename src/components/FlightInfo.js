@@ -9,7 +9,7 @@ class FlightInfo extends Component {
   render() {
     return (
       <div>
-        {this.props.flight && <div className="flight">{this.props.flight.airline}</div>}
+        {this.props.flight && <div className="flight"><h1></h1>{this.props.flight.airline}</div>}
         {!this.props.flight && <div>loading flight ...</div>}
       </div>
     )

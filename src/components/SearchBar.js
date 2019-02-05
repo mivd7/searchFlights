@@ -11,15 +11,20 @@ class SearchBar extends Component {
     const flights = this.props.flights
     return (
       <div>
+        <form>
         <input type="text"
                name="flightnum"
                className="form-control"
                placeholder = "Flight No."
                onChange={(e) => findFlightByNum(e.target.value)}
-         /><button onSubmit="submit">Search</button>
+         />
          <br/>
           <DateMenu />
+          </form>
+          <div className="main">
+          <br/>
           <SearchResults search={search} flights={flights}/>
+          </div>
       </div>
     );
   }

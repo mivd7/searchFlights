@@ -1,0 +1,34 @@
+.header {
+  height: 50vh;
+  width: 100vw;
+  background-image: linear-gradient(
+      to right bottom,
+      rgba($color-primary-light, 0.8),
+      rgba($color-primary-dark, 0.8)), url(../img/suitcases.jpg);
+  background-size: cover;
+  background-position: top;
+  clip-path: polygon(0 0, 100% 0, 100% 75vh, 0 100%);
+  position: relative;
+  font-size: 1.5rem;
+
+  &__logo-box {
+    position: absolute;
+    top: 2rem;
+    left: 5rem;
+  }
+
+  &__logo {
+    height: 7rem;
+  }
+  /* determine size of image */
+  &__text-box {
+    position: absolute;
+    color: $color-white;
+    top: 40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* transform property 50% of element's own top (not parent) */
+    text-align: center;
+  }
+}
+/* box container for logo-image, determines position relative  to parent element ('header') */

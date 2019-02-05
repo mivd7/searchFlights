@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Link} from 'react-router-dom'
 import {connect} from 'react-redux';
+import MatchList from './MatchList';
 import {getFlightID} from '../lib/finders'
 import {loadFlight} from '../actions/flights'
 
@@ -21,8 +22,7 @@ class SearchResults extends Component {
                                           <br/>
                                           Departure time: {result.departure} on {result.date} from gate G20
                                           <h3>Airline: {result.airline}</h3></div>}              
-        {!result && matches && matches.length < flights.length && 
-         <div><h2>Did you mean </h2>{matches.map(match => <ul><Link to={`/flights/${getFlightID(flights, matches)}`}><li>{match}</li></Link></ul>)}</div>}
+        {!result && matches && matches.length < flights.length && <MatchList matches={matches}/>}
       </div>
     );
   }

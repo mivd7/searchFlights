@@ -1,4 +1,4 @@
-import {NUM_QUERY, DATE_QUERY} from '../actions/search';
+import {NUM_QUERY, DATE_QUERY, MATCHES_LOADED} from '../actions/search';
 import {getFlightByNum, getFlightByDate} from '../lib/finders'
 import {formatDate} from '../lib/dateFormats'
 
@@ -19,6 +19,9 @@ export default (state = [], action = {}) => {
                           .filter((val) => val.includes(formatted))
       const results = getFlightByDate(flights, match)
       return {...state, formatted, match, results};
+    }
+    case MATCHES_LOADED: {
+      return action.payload
     }
     default:
       return state;

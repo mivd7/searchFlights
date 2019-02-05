@@ -7,8 +7,6 @@ class FlightInfo extends Component {
     this.props.loadFlight(this.props.match.params.id)
   }
   render() {
-    
-    console.log(this.props)
     return (
       <div>
         {this.props.flight && <div className="flight">{this.props.flight.airline}</div>}

@@ -2,6 +2,7 @@ import request from 'superagent'
 
 export const NUM_QUERY = 'NUM_QUERY';
 export const DATE_QUERY = 'DATE_QUERY';
+export const MATCHES_LOADED = 'MATCHES_LOADED'
 
 const baseUrl = 'http://localhost:4000'
 
@@ -17,6 +18,13 @@ const dateQuery = (value, flights) => {
     type: DATE_QUERY, 
     payload: {value, flights}
   };
+}
+
+export const loadMatches = (matches, flights) => {
+  return {
+    type: MATCHES_LOADED,
+    payload: {matches, flights}
+  }
 }
 
 export const findFlightByNum = (num) => (dispatch) => {

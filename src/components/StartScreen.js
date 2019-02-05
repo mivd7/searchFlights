@@ -9,7 +9,6 @@ class StartScreen extends Component {
   }
 
   render() {
-    console.log(this.props)
     return (
       <div>
         Welcome! Search for your flight

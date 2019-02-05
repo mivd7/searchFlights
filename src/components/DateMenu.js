@@ -10,7 +10,6 @@ class DateMenu extends Component {
   // }
 
   render() {
-    console.log(this.props)
     const {findFlightByDate} = this.props
     return (
       <div>

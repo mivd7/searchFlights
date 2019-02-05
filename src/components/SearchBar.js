@@ -6,10 +6,9 @@ import DateMenu from './DateMenu'
 
 class SearchBar extends Component {
   render() {
-    console.log(this.props)
     const {findFlightByNum} = this.props;
     const search = this.props.search
-    console.log(search)
+    const flights = this.props.flights
     return (
       <div>
         <input type="text"
@@ -20,7 +19,7 @@ class SearchBar extends Component {
          /><button onSubmit="submit">Search</button>
          <br/>
           <DateMenu />
-          <SearchResults value={search.value} results={search.results} />
+          <SearchResults search={search} flights={flights}/>
       </div>
     );
   }

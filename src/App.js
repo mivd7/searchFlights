@@ -13,11 +13,12 @@ class App extends Component {
     return (
       <Provider store={store}>
       <html>
+      
       <head>
         <meta charset="UTF-8"/>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 
-        <link href="https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900" rel="stylesheet"/>
+        <link href="https://fonts.googleapis.com/css?family=Roboto" rel="stylesheet"/>      
       </head>
 
       <body>
@@ -31,10 +32,7 @@ class App extends Component {
             <Route path="/flights" exact component={MatchList} />
             <Route path="/flights/:id" exact component={FlightInfo} />
           </div>
-        </header>
-        <main className="main main--right">
-        nice background
-        </main>
+      </header>
       </div>
       </body>
       </html>

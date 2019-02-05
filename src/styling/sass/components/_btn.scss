@@ -3,14 +3,13 @@
   &:visited {
     text-transform: uppercase;
     text-decoration: none;
-    padding: 1.5rem 4rem;
     /* top to bottom 15px padding, right to left 40px padding */
     display: inline-block;
     /* prevents button from overlapping with header text */
     border-radius: 10rem;
     transition: all 0.2s;
     position: relative;
-    font-size: 1.6rem;
+    font-size: .5rem;
   }
 
   &:hover {
@@ -33,24 +32,25 @@
       from user when clicked */
   }
 
-  &::after {
-    content: "";
-    display: inline-block;
-    height: 100%;
-    width: 100%;
-    border-radius: 10rem;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: -1;
-    /* the z index defines the position of the elements if they are one on top of another.
-         here -1 sets it behind the original button element */
-    transition: all 0.5s;
-    font-size: $font-size-main;
-  }
+  // &::after {
+  //   content: "";
+  //   display: inline-block;
+  //   height: 10%;
+  //   width: 10%;
+  //   border-radius: 10rem;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: -1;
+  //   /* the z index defines the position of the elements if they are one on top of another.
+  //        here -1 sets it behind the original button element */
+  //   transition: all 0.5s;
+  //   font-size: $font-size-main;
+  // }
 
-  &--white {
-    background-color: $color-white;
+  &--calendar {
+    background-image: url(../img/calendar.png);
+    background-size: 100%;
     color: $color-grey-dark;
 
     &::after {

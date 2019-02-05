@@ -3,6 +3,9 @@ import {connect} from 'react-redux';
 import {findFlightByNum, findFlightByDate} from '../actions/search';
 import SearchResults from './SearchResults';
 import DateMenu from './DateMenu'
+// import '../styling/sass/main'
+
+
 
 class SearchBar extends Component {
   render() {
@@ -11,17 +14,19 @@ class SearchBar extends Component {
     const flights = this.props.flights
     return (
       <div>
-        <form>
-        <input type="text"
-               name="flightnum"
-               className="form-control"
-               placeholder = "Flight No."
-               onChange={(e) => findFlightByNum(e.target.value)}
-         />
-         <br/>
-          <DateMenu />
-          </form>
-          <div className="main main--right">
+        <div className="input">
+          <input type="text"
+                name="flightnum"
+                className="input input--num"
+                placeholder = "Flight No."
+                onChange={(e) => findFlightByNum(e.target.value)}
+          />
+          <br/>
+          <div className="input">
+            <DateMenu/>
+          </div>
+        </div>
+        <div>
           <br/>
           <SearchResults search={search} flights={flights}/>
           </div>

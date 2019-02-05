@@ -10,7 +10,7 @@
   }
 
   &--result {
-    position: relative;
+    position: absolute;
     top: 50%;
     color: $color-secondary-dark;
     background-image: linear-gradient(to top, rgba($color-grey-light, 0.75),rgba($color-white, 0.75)), 
@@ -23,7 +23,7 @@
   }
 
   &--matches {
-    max-height: 25rem;
+    max-height: 30rem;
     padding: 1rem;
     text-align: justify;
     column-span: all;
@@ -32,8 +32,9 @@
     margin-left: 25%;
     text-align: left;
     background-color: rgba($color-grey-dark, 0.75);
-    border-radius: 0;
+    border-radius: 5%;
     padding: 2rem;
+    font-size: 1.5rem;
     
     ul {
       list-style-type: none;

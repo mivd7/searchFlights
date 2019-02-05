@@ -15,7 +15,7 @@ class SearchResults extends Component {
     return (
       <div>
         {result && 
-        <div className="search search--result"><Link to={`/flights/${result.id}`}><h2>Flight number: {result.flight}</h2></Link>
+        <div className="search search--result"><Link to={`/flights/${result.id}`}><h2>Flight {result.flight}</h2></Link>
                                           From {result.start} to {result.destination}
                                           <br/>
                                           Departure time: {result.departure} on {result.date.split('-').reverse().join('-')}

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Provider} from 'react-redux'
-import {Route} from 'react-router-dom'
+import {Route, Link} from 'react-router-dom'
 import './styling/sass/App.scss'
 import StartScreen from './components/StartScreen'
 import MatchList from './components/SearchResults'
@@ -25,9 +25,11 @@ class App extends Component {
       <div>
         <header className="header">
           <div className="header__logo-box">
-            <img src={logo} alt="logo" className="header__logo" /> 
+          <Link to={"/"}>
+            <img src={logo} alt="logo" className="header__logo"/> 
+          </Link>
           </div>
-          <div className="header__text-box">
+          <div className="main">
             <Route path="/" exact component={StartScreen}/>
             <Route path="/flights" exact component={MatchList} />
             <Route path="/flights/:id" exact component={FlightInfo} />
@@ -36,7 +38,7 @@ class App extends Component {
       </div>
       <footer className="footer">
 
-        <iframe className="the beatles" width="500" height="300" src="https://www.youtube.com/embed/nS5_EQgbuLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        <iframe title="theBeatles" width="500" height="300" src="https://www.youtube.com/embed/nS5_EQgbuLc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
         <br/> © MIVD Web Development, 2019
       </footer>
       </body>

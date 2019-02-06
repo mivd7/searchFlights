@@ -1,4 +1,11 @@
 .btn {
+  width: 8rem;
+  height: 2rem;
+  border-radius: 10%;
+  margin-top: 1rem;
+  border: .5rem black;
+  background-color: $color-grey-dark, .8;
+
   &:link,
   &:visited {
     text-transform: uppercase;
@@ -32,21 +39,21 @@
       from user when clicked */
   }
 
-  // &::after {
-  //   content: "";
-  //   display: inline-block;
-  //   height: 10%;
-  //   width: 10%;
-  //   border-radius: 10rem;
-  //   position: absolute;
-  //   top: 0;
-  //   left: 0;
-  //   z-index: -1;
-  //   /* the z index defines the position of the elements if they are one on top of another.
-  //        here -1 sets it behind the original button element */
-  //   transition: all 0.5s;
-  //   font-size: $font-size-main;
-  // }
+  &::after {
+    content: "";
+    display: inline-block;
+    height: 10%;
+    width: 10%;
+    border-radius: 10rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    /* the z index defines the position of the elements if they are one on top of another.
+         here -1 sets it behind the original button element */
+    transition: all 0.5s;
+    font-size: $font-size-main;
+  }
 
   &--calendar {
     background-image: url(../img/calendar.png);

@@ -1,0 +1,93 @@
+.btn {
+  &:link,
+  &:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    /* top to bottom 15px padding, right to left 40px padding */
+    display: inline-block;
+    /* prevents button from overlapping with header text */
+    border-radius: 10rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: .5rem;
+  }
+
+  &:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
+    /* gives button on hover a shadow of 0 in x-direction, 10px in y-direction, 20px blur
+      and a black shadow-color with .2 transparency */
+    &::after {
+      transform: scaleX(1.4) scaleY(1.6);
+      /* scales the button after hover to x the size it originally was */
+      opacity: 0;
+      /* then disappears */
+    }
+  }
+
+  &:active {
+    transform: translateY(-1px);
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .2);
+    /* smaller shadow than hover to make it look closer to the page and further away
+      from user when clicked */
+  }
+
+  // &::after {
+  //   content: "";
+  //   display: inline-block;
+  //   height: 10%;
+  //   width: 10%;
+  //   border-radius: 10rem;
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   z-index: -1;
+  //   /* the z index defines the position of the elements if they are one on top of another.
+  //        here -1 sets it behind the original button element */
+  //   transition: all 0.5s;
+  //   font-size: $font-size-main;
+  // }
+
+  &--calendar {
+    background-image: url(../img/calendar.png);
+    background-size: 100%;
+    color: $color-grey-dark;
+
+    &::after {
+      background-color: $color-white;
+    }
+  }
+
+  &--animated {
+    animation: moveInBottom 0.5s ease-out 0.75s;
+    animation-fill-mode: backwards;
+    /* automatically apply the styles up to zero percent before the animation starts
+         so it is invisible at load */
+  }
+}
+
+.btn-text {
+  &:link,
+  &:visited {
+    font-size: $font-size-main;
+    color: $color-primary;
+    display: inline-block;
+    text-decoration: none;
+    border-bottom: 1px solid $color-primary;
+    padding: 3px;
+    transition: all .2s;
+  }
+
+  &:hover {
+    background-color: $color-primary;
+    color: $color-white;
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    padding: 5px;
+    transform: trasnlateY(-2px);
+  }
+
+  &:active {
+    box-shadow: 0 1rem 2rem rgba($color-black, .15);
+    transform: trasnlateY(-2px);
+  }
+}

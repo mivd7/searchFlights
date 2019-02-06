@@ -1,26 +1,31 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {findFlightByNum, findFlightByDate} from '../actions/search';
+import {numQuery} from '../actions/search';
 import SearchResults from './SearchResults';
 import DateMenu from './DateMenu'
+// import '../styling/sass/main'
+
+
 
 class SearchBar extends Component {
   render() {
-    console.log(this.props)
-    const {findFlightByNum} = this.props;
+    const { numQuery } = this.props;
     const search = this.props.search
-    console.log(search)
+    const flights = this.props.flights
     return (
       <div>
-        <input type="text"
-               name="flightnum"
-               className="form-control"
-               placeholder = "Flight No."
-               onChange={(e) => findFlightByNum(e.target.value)}
-         /><button onSubmit="submit">Search</button>
-         <br/>
-          <DateMenu />
-          <SearchResults value={search.value} results={search.results} />
+        <div className="input">
+          <input type="text"
+                name="flightnum"
+                className="input input--num"
+                placeholder = "Flight No."
+                onChange={(e) => numQuery(e.target.value, flights)}
+          /><DateMenu/>
+        </div>
+        <div className="search">
+          <br/>
+          <SearchResults search={search} flights={flights}/>
+        </div>
       </div>
     );
   }
@@ -31,4 +36,4 @@ const mapStateToProps = state => ({
   flights: state.flights
 })
 
-export default connect(mapStateToProps, {findFlightByNum})(SearchBar)
+export default connect(mapStateToProps, { numQuery })(SearchBar)

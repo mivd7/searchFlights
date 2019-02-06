@@ -1,4 +1,4 @@
-import {NUM_QUERY, DATE_QUERY} from '../actions/search';
+import {NUM_QUERY, DATE_QUERY, MATCHES_LOADED} from '../actions/search';
 import {getFlightByNum, getFlightByDate} from '../lib/finders'
 import {formatDate} from '../lib/dateFormats'
 
@@ -7,18 +7,21 @@ export default (state = [], action = {}) => {
     case NUM_QUERY: {
       const value = action.payload.value
       const flights = action.payload.flights
-      const match = flights.map(flights => flights.flight)
-                          .filter((val) => val.includes(value))
-      const results = getFlightByNum(flights, match)
-      return {...state, value, match, results};
+      const matches = flights.filter(flight => flight.flight.includes(value))
+
+      const result = getFlightByNum(flights, matches.map(match => match.flight))
+      return {...state, value, matches, result};
     }
     case DATE_QUERY: {
       const formatted = formatDate(action.payload.value)
       const flights = action.payload.flights
-      const match = flights.map(flights => flights.date)
+      const matches = flights.map(flights => flights.date)
                           .filter((val) => val.includes(formatted))
-      const results = getFlightByDate(flights, match)
-      return {...state, formatted, match, results};
+      const result = getFlightByDate(flights, matches)
+      return {...state, formatted, matches, result};
+    }
+    case MATCHES_LOADED: {
+      return action.payload
     }
     default:
       return state;

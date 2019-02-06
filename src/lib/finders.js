@@ -11,3 +11,10 @@ export function getFlightByDate(flights, date) {
         if(flights[i]['date'] == date)
         return flights[i]
     }}
+
+export function getFlightID(flights, matches) {
+        var i;
+        for (i = 0; i < flights.length; i++) {
+            if(flights[i]['flight'] == matches)
+            return flights[i].id
+        }}

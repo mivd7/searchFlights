@@ -1,10 +1,9 @@
 import request from 'superagent'
+import {baseUrl} from '../config'
 
 export const FLIGHTS_FETCHED = 'FLIGHTS_FETCHED'
 export const FLIGHT_FETCHED = 'FLIGHT_FETCHED'
 export const SEARCH_QUERY = 'SEARCH_QUERY'
-
-const baseUrl = 'http://localhost:4000'
 
 export const flightsFetched = flights => ({
   type: FLIGHTS_FETCHED,
@@ -18,12 +17,16 @@ const flightFetched = flight => ({
 
 export const loadFlights = () => (dispatch, getState) => {
   if (getState().flights) return
-
+  // dispatch(appLoading)
   request(`${baseUrl}/flights`)
     .then(response => {
       dispatch(flightsFetched(response.body))
+      // dispatch(appLoaded)
     })
-    .catch(console.error)
+    .catch(
+      console.error,
+      // dispatch(ohNoes)
+    )
 }
 
 export const loadFlight = (id) => (dispatch, getState) => {
@@ -36,3 +39,5 @@ export const loadFlight = (id) => (dispatch, getState) => {
     })
     .catch(console.error)
 }
+
+

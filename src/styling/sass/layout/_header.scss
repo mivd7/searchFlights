@@ -1,3 +1,4 @@
+
 .header {
   margin-top: .5rem;
   max-height: 95vh;
@@ -17,7 +18,6 @@
   border-bottom-right-radius: 15%;
   position: relative;
   font-size: 1.7rem;
-  font-stretch: expanded;
 
   &__logo-box {
     position: absolute;
@@ -29,8 +29,12 @@
     height: 5rem;
   }
   /* determine size of image */
-  // &__text-box {
-   
-  // }
+  &__text-box {
+    position: relative;
+    right: 7rem;
+    margin-top: .5rem;
+    font-size: 1.4rem;
+    font-display: initial;
+  }
 }
 /* box container for logo-image, determines position relative  to parent element ('header') */

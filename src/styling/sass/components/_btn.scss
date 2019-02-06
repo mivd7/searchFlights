@@ -1,10 +1,16 @@
 .btn {
-  width: 8rem;
-  height: 3rem;
-  border-radius: 30%;
+  width: 2.2rem;
+  height: 2.2rem;
   margin-top: 1rem;
+  position: absolute;
+  top: 1%;
+  left: 92%;
   background-color: $color-grey-dark, .8;
   text-decoration: none;
+  background-image: url('../img/kruisje.png');
+  background-size: 100%;
+  background-repeat: none;
+  cursor: grab;
 
   &:link,
   &:visited {
@@ -17,20 +23,16 @@
     font-size: .5rem;
   }
 
-  &:hover {
-    transform: translateY(-3px);
-    box-shadow: 0 1rem 2rem rgba(0, 0, 0, .2);
-
-    &::after {
-      transform: scaleX(1.4) scaleY(1.6);
-      opacity: 0;
-    }
+  &:active {
+    cursor: grabbing;
   }
 
-  &--animated {
-    animation: moveInBottom 1s ease-out 0.75s;
-    animation-fill-mode: backwards;
-    /* automatically apply the styles up to zero percent before the animation starts
-         so it is invisible at load */
+  &--result {
+    cursor: grab;
+    position: inherit;
+    top: 9%;
+    left: 89%;
+
+   
   }
 }

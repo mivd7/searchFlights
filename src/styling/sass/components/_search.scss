@@ -4,7 +4,7 @@
   color: $color-secondary-light;
   width: 50rem;
   position: relative;
-  margin-top: 2rem;
+  margin-top: 1.5rem;
 
   a {
     text-decoration: none;
@@ -13,6 +13,7 @@
   &--result {
     position: absolute;
     top: 50%;
+    margin-bottom: 2rem;
     color: $color-secondary-dark;
     background-image: linear-gradient(to top, rgba($color-grey-light, 0.75),rgba($color-white, 0.75)), 
                                       url(../img/withlove.jpg);
@@ -25,8 +26,6 @@
 
   &__text {
       position: relative;
-      top: inherit;
-      left: inherit;
 
       &__date {
         position: absolute;

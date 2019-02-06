@@ -27,15 +27,13 @@ class SearchResults extends Component {
             <div className="search__time">Time: {result.departure}</div>
             <div className="search__date">Date: {result.date.split('-').reverse().join('-')}</div> 
             <h3>Airline: {result.airline}</h3>
-            <button className="btn btn--animated" 
-                    onClick={() => this.props.clearQuery(search.value)}>
-                    Clear search</button>
+            <button className="btn btn--result" 
+                    onClick={() => this.props.clearQuery(search.value)}/>
           </div>
                                         }              
         {displayListOfResults && <div className="search search--matches search--matches__list"><MatchList matches={matches}/>
-                                 <button className="btn btn--white" 
-                                              onClick={() => this.props.clearQuery(search.value)}>
-                                              Clear search</button></div>}
+                                 <button className="btn" 
+                                              onClick={() => this.props.clearQuery(search.value)}/></div>}
       </div>
     );
   }

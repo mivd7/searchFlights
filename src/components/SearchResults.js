@@ -24,9 +24,10 @@ class SearchResults extends Component {
             <h2>Flight {result.flight}</h2></Link>
             From {result.start} to {result.destination}
             <br/>
-            Departure time: {result.departure} on {result.date.split('-').reverse().join('-')}
+            <div className="search__time">Time: {result.departure}</div>
+            <div className="search__date">Date: {result.date.split('-').reverse().join('-')}</div> 
             <h3>Airline: {result.airline}</h3>
-            <button className="btn btn--white" 
+            <button className="btn btn--animated" 
                     onClick={() => this.props.clearQuery(search.value)}>
                     Clear search</button>
           </div>

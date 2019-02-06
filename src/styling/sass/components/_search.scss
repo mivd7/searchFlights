@@ -23,6 +23,28 @@
     }
   }
 
+  &__text {
+      position: relative;
+      top: inherit;
+      left: inherit;
+
+      &__date {
+        position: absolute;
+        top: 5;
+        left: 90;
+        color: black;
+        background-color: $color-primary-dark;
+      }
+
+      &__time {
+        position: absolute;
+        top: 5;
+        left: 10;
+        color: black;
+        background-color: $color-primary-light;
+      }
+  }
+
   &--matches {
     max-height: 30rem;
     padding: 1rem;

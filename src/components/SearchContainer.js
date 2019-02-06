@@ -1,13 +1,10 @@
 import React, {Component} from 'react';
 import {connect} from 'react-redux';
-import {numQuery, clearQuery} from '../actions/search';
+import {numQuery} from '../actions/search';
 import SearchResults from './SearchResults';
 import DateMenu from './DateMenu'
-// import '../styling/sass/main'
 
-
-
-class SearchBar extends Component {
+class SearchContainer extends Component {
   render() {
     const { numQuery } = this.props;
     const search = this.props.search
@@ -19,11 +16,9 @@ class SearchBar extends Component {
           <input type="text"
                 name="flightnum"
                 className="input input--num"
-                // placeholder = "Flight No."
-                value={search.value}
-                onChange={(e) => numQuery(e.target.value.toUpperCase(), flights)}
-          />
-          <DateMenu/>
+                placeholder = "Flight No."
+                onChange={(e) => numQuery(e.target.value.toUpperCase(), flights)} />       
+          <DateMenu/>  
         </div>
         <div className="search">
           <br/>
@@ -39,4 +34,4 @@ const mapStateToProps = state => ({
   flights: state.flights
 })
 
-export default connect(mapStateToProps, { numQuery, clearQuery })(SearchBar)
+export default connect(mapStateToProps, { numQuery })(SearchContainer)

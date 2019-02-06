@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {connect} from 'react-redux'
-import SearchBar from './SearchBar'
+import SearchContainer from './SearchContainer'
 import {loadFlights} from '../actions/flights'
 
 class StartScreen extends Component {
@@ -15,7 +15,7 @@ class StartScreen extends Component {
         <h1>Welcome! Search for your flight</h1>
         </div>
         <br/>
-        <SearchBar flights={this.props.flights}/>
+        <SearchContainer flights={this.props.flights}/>
       </div>
     )
   }

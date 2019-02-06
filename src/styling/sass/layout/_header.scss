@@ -29,16 +29,8 @@
     height: 5rem;
   }
   /* determine size of image */
-  &__text-box {
-    max-height: 95vh;
-    position: absolute;
-    color: $color-white;
-    font-size: 1.6rem;
-    top: 45%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    /* transform property 50% of element's own top (not parent) */
-    text-align: center;
-  }
+  // &__text-box {
+   
+  // }
 }
 /* box container for logo-image, determines position relative  to parent element ('header') */

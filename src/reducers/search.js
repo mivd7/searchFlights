@@ -12,6 +12,7 @@ export default (state = [], action = {}) => {
       const result = getFlightByNum(flights, matches.map(match => match.flight))
       return {...state, value, matches, result};
     }
+
     case DATE_QUERY: {
       const formatted = formatDate(action.payload.value)
       const flights = action.payload.flights
@@ -20,13 +21,15 @@ export default (state = [], action = {}) => {
       const result = getFlightByDate(flights, matches)
       return {...state, formatted, matches, result};
     }
+
     case MATCHES_LOADED: {
       return action.payload
     }
+
     case CLEAR_QUERY: {
-      console.log()
-      return state.value.split().length = ''
+      return state.matches.length = ''
     }
+
     default:
       return state;
   }

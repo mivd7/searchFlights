@@ -3,8 +3,8 @@ import {baseUrl} from '../config'
 
 export const NUM_QUERY = 'NUM_QUERY';
 export const DATE_QUERY = 'DATE_QUERY';
-export const MATCHES_LOADED = 'MATCHES_LOADED'
-export const CLEAR_QUERY = 'CLEAR_QUERY' 
+export const MATCHES_LOADED = 'MATCHES_LOADED';
+export const CLEAR_QUERY = 'CLEAR_QUERY';
 
 export const numQuery = (value, flights) => {
   return {
@@ -33,17 +33,6 @@ export const loadMatches = (matches, flights) => {
     payload: {matches, flights}
   }
 }
-
-
-// // No longer necessary
-// export const findFlightByNum = (num) => (dispatch) => {
-//   request(`${baseUrl}/flights`)
-//     .then(response => {
-//       console.log(response)
-//       dispatch(numQuery(num, response.body))
-//     })
-//     .catch(console.error)
-// }
 
 export const findFlightByDate = (date) => (dispatch) => {
   request(`${baseUrl}/flights`)

@@ -2,13 +2,16 @@ main {
   height: 95vh;
   min-height: 95vh;
   background-image: linear-gradient(
-    to right bottom,
-    rgba($color-secondary-light, 0.5),
-    rgba($color-secondary-dark, 0.5)), url(../img/airplane-landing.png);;
+  to right bottom,
+  rgba($color-primary-light, 0.7),
+  rgba($color-primary-dark, 0.7)), url(../img/suitcases.jpg);
   background-size: 100%;
-  background-position: center;
-  background-color: rgba($color-secondary-light, 0.5);
-  border-top-left-radius: -5%;
-  border-top-right-radius: -5%; 
-  font-size: 1.5rem;
+  background-position: 0px 50%;
+  background-repeat: no-repeat;
+  border-bottom-color: $color-primary-light;
+  border-bottom-left-radius: 15%;
+  border-bottom-right-radius: 15%;
+  position: relative;
+  font-size: 1.6rem;
+  text-align: center;
 }

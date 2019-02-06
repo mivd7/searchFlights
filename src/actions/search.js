@@ -3,6 +3,7 @@ import request from 'superagent'
 export const NUM_QUERY = 'NUM_QUERY';
 export const DATE_QUERY = 'DATE_QUERY';
 export const MATCHES_LOADED = 'MATCHES_LOADED'
+export const CLEAR_QUERY = 'CLEAR_QUERY' 
 
 const baseUrl = 'http://localhost:4000'
 
@@ -19,6 +20,13 @@ const dateQuery = (value, flights) => {
     payload: {value, flights}
   };
 }
+
+export const clearQuery = (query) => {
+  return {
+    type: CLEAR_QUERY,
+    query
+  }
+} 
 
 export const loadMatches = (matches, flights) => {
   return {

@@ -15,7 +15,7 @@ In 'src/config.js' you can change the baseUrl for the actual API.
 With the build feature of the create-react-app module, this app can be produced and readied for deployment. Running yarn build will create a static folder where the code is optimised using WebPack. This could then be deployed to any web server by uploading the contents of the static folder to that server. More info on this build-feature can be found here: https://facebook.github.io/create-react-app/docs/production-build
 
 ## TO DO LIST
-Things that could be improved to this app:
+Things that could be improved to this app:<br>
 -add a server side, to assist with search logic, for better performance and SEO. Right now everything is build, fetched and processed on client-side, based on a data file with 25 records. Obviously when this would scale-up, this would become problematic. For now it serves as a fine showcase of what I can do with React & Redux.
 
 -deploy this app to the web. This app could also easily be deployed, using the described build feature above. For now, however, it is only available as a GIT repository.

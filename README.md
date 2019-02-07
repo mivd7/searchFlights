@@ -19,3 +19,5 @@ Things that could be improved to this app:<br>
 -Add a server side for better performance and SEO. Right now everything is build, fetched and processed on client-side, based on a data file with 25 records. Obviously when this would scale-up, this would become problematic because fetching all flights and filtering them client side would make the whole app pretty slow. For now it serves as a fine showcase of what I can do with React & Redux.
 
 -Add deeplinking, search queries in url (e.g. localhost:3000/q?=AD1234 ) so search can be repeated by loading. I didn't get to implementing this but would love to learn more about how to do this.
+
+-I was unable to test this on IE11, because I don't have a windows-computer available for this.

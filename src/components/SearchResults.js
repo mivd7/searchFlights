@@ -12,7 +12,7 @@ class SearchResults extends Component {
     const flights = this.props.flights
 
     if (!matches || flights === null) return (<div></div>)
-    if (matches.length === 0) return (<div>Flight not found!</div>)
+    if (matches.length === 0) return (<div className="search search--matches"><h2>Flight not found!</h2></div>)
 
     const displayListOfResults = !result && matches && matches.length < flights.length
 
@@ -29,11 +29,12 @@ class SearchResults extends Component {
             <h3>Airline: {result.airline}</h3>
             <button className="btn btn--result" 
                     onClick={() => this.props.clearQuery(search.value)}/>
-          </div>
-                                        }              
-        {displayListOfResults && <div className="search search--matches search--matches__list"><MatchList matches={matches}/>
-                                 <button className="btn" 
-                                              onClick={() => this.props.clearQuery(search.value)}/></div>}
+          </div>}              
+        {displayListOfResults && <div className="search search--matches search--matches__list">
+                                    <MatchList matches={matches}/>
+                                    <button className="btn btn--matches" 
+                                            onClick={() => this.props.clearQuery(search.value)}/>
+                                  </div>}
       </div>
     );
   }

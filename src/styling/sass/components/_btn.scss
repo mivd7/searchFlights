@@ -1,16 +1,17 @@
 .btn {
   width: 2.2rem;
   height: 2.2rem;
+  border: none;
   margin-top: 1rem;
   position: absolute;
   top: 1%;
   left: 92%;
-  background-color: $color-grey-dark, .8;
+  background-color: $color-grey-light, .8;
   text-decoration: none;
   background-image: url('../img/kruisje.png');
   background-size: 100%;
   background-repeat: none;
-  cursor: grab;
+  cursor: pointer;
 
   &:link,
   &:visited {
@@ -23,16 +24,12 @@
     font-size: .5rem;
   }
 
-  &:active {
-    cursor: grabbing;
-  }
-
   &--result {
-    cursor: grab;
     position: inherit;
     top: 9%;
     left: 89%;
-
-   
+  }
+  &--matches {
+    background-color: $color-grey-dark;
   }
 }

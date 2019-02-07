@@ -9,6 +9,7 @@ class StartScreen extends Component {
   }
 
   render() {
+    console.log(this.props)
     return (
       <div>
         <div className="header__text-box">
@@ -22,7 +23,8 @@ class StartScreen extends Component {
 }
 
 const mapStateToProps = state => ({
-  flights: state.flights
+  flights: state.flights,
+  search: state.search
 })
 
 export default connect(mapStateToProps, {loadFlights})(StartScreen)

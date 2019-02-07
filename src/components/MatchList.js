@@ -6,9 +6,14 @@ export default class MatchList extends Component {
     return (
       <div>
         <div className="search--matches__heading">
-        <h2>Did you mean </h2></div>{this.props.matches.map(match => 
-        <div><ul><Link to={`flights/${match.id}`}><li>{match.flight}: {match.start} - {match.destination}
-                                                     </li></Link></ul></div>)}
+        <h2>Did you mean: </h2></div>{this.props.matches.map(match => 
+        <div>
+          <ul>
+            <Link to={`flights/${match.id}`}>
+              <li>{match.flight}: {match.start} - {match.destination}</li>
+            </Link>
+          </ul>
+        </div>)}
       </div>
     )
   }

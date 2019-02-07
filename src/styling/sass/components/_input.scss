@@ -1,21 +1,25 @@
 .input {
   padding: 1rem;
-  height: 4rem;
   width: 15rem;
+  margin: 1rem transparent;
   text-align: center;
   position: relative;
   align-self: center;
   align-content: center;
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   color: $color-primary-dark;
 
   &--num {
     position: absolute;
     top: 1rem;
-    left: 20rem;
+    left: 35rem;
     border-right: 20rem;
     margin-bottom: 2rem;
     margin-right: 2rem;
+    background-image: url(../img/airport.svg) !important;
+    background-size: 20%;
+    background-repeat: no-repeat;
+    background-position: .5rem;
 
     &:hover,
     &:focus {
@@ -32,14 +36,12 @@
 
   &--date {
     position: relative;
-    bottom: 0rem;
-    right: 0rem;
     cursor: context-menu;
     box-sizing: 50 50;
     background-image: url(../img/calendar.png) !important;
     background-size: 25%;
     background-repeat: no-repeat;
-    padding: 1rem;
+    color: $color-grey-dark;
 
       &:hover,
       &:focus {

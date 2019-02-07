@@ -3,10 +3,10 @@ import {Provider} from 'react-redux'
 import {Route, Link} from 'react-router-dom'
 import './styling/sass/App.scss'
 import StartScreen from './components/StartScreen'
-import MatchList from './components/SearchResults'
 import FlightInfo from './components/FlightInfo'
 import store from './store'
 import logo from './logo.svg'
+import SearchContainer from './components/SearchContainer';
 
 class App extends Component {
   render() {
@@ -31,7 +31,7 @@ class App extends Component {
           </div>
           <div className="main">
             <Route path="/" exact component={StartScreen}/>
-            <Route path="/flights" exact component={MatchList} />
+            <Route path="/flights" exact component={SearchContainer} />
             <Route path="/flights/:id" exact component={FlightInfo} />
           </div>
       </header>

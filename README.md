@@ -16,8 +16,8 @@ With the build feature of the create-react-app module, this app can be produced 
 
 ## TO DO LIST
 Things that could be improved to this app:<br>
--add a server side, to assist with search logic, for better performance and SEO. Right now everything is build, fetched and processed on client-side, based on a data file with 25 records. Obviously when this would scale-up, this would become problematic. For now it serves as a fine showcase of what I can do with React & Redux.
-
--deploy this app to the web. This app could also easily be deployed, using the described build feature above. For now, however, it is only available as a GIT repository.
+-Add a server side for better performance and SEO. Right now everything is build, fetched and processed on client-side, based on a data file with 25 records. Obviously when this would scale-up, this would become problematic because fetching all flights and filtering them client side would make the whole app pretty slow. For now it serves as a fine showcase of what I can do with React & Redux.
 
 -Add deeplinking, search queries in url (e.g. localhost:3000/q?=AD1234 ) so search can be repeated by loading. I didn't get to implementing this but would love to learn more about how to do this.
+
+-I was unable to test this on IE11, because I don't have a windows-computer available for this.

@@ -5,12 +5,10 @@ import SearchResults from './SearchResults';
 import DateMenu from './DateMenu'
 
 class SearchContainer extends Component {
-
   render() {
     const { numQuery } = this.props;
     const search = this.props.search
     const flights = this.props.flights
-    console.log(this.props)
     return (
       <div>
         <div className="input">
@@ -19,8 +17,7 @@ class SearchContainer extends Component {
                 className="input input--num"
                 placeholder="Flight No."
                 autoComplete="off"
-                onChange={(e) => numQuery(e.target.value.toUpperCase(), flights)} />       
-          <DateMenu/>  
+                onChange={(e) => numQuery(e.target.value.toUpperCase(), flights)} />          <DateMenu/>  
         </div>
         <div className="search">
           <br/>

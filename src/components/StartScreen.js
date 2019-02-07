@@ -14,7 +14,7 @@ class StartScreen extends Component {
     console.log(handlers)
     return (
       <div>
-      {this.props.flights && handlers.isLoading === false && handlers.isError === false
+      {this.props.flights
         && <div>
               <div className="header__text-box">
                 <h1>Search for your flight...</h1>
@@ -22,7 +22,7 @@ class StartScreen extends Component {
                 <br/>
                 <SearchContainer flights={this.props.flights}/>
             </div>}
-        {!handlers || handlers.isLoading === true && 
+        {!this.props.flights || handlers.isLoading === true &&
           <div><LoadingScreen /></div>}</div>
     )
   }
@@ -35,4 +35,3 @@ const mapStateToProps = state => ({
 })
 
 export default connect(mapStateToProps, {loadFlights})(StartScreen)
-

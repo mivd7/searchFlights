@@ -8,9 +8,9 @@ export default class MatchList extends Component {
         <div className="search--matches__heading">
         <h2>Did you mean: </h2></div>{this.props.matches.map(match => 
         <div>
-          <ul>
+          <ul key={match.id}>
             <Link to={`flights/${match.id}`}>
-              <li>{match.flight}: {match.start} - {match.destination}</li>
+              <li key={match.id}>{match.flight}: {match.start} - {match.destination}</li>
             </Link>
           </ul>
         </div>)}

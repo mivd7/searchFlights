@@ -2,14 +2,20 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux'
 import SearchContainer from './SearchContainer'
 import {loadFlights} from '../actions/flights'
+import queryString from 'query-string'
 
 class StartScreen extends Component {
   componentDidMount() {
     this.props.loadFlights()
   }
 
+  queryToURL(value) {
+    this.props.location.search = 'q?=' + value[0]
+  }
+
   render() {
-    console.log(this.props)
+    const values = queryString.parse(this.props.search.value)
+    this.queryToURL(Object.keys(values))
     return (
       <div>
         <div className="header__text-box">
